@@ -25,8 +25,8 @@ size_t height_helper(const binary_tree_t *tree)
 
 	if (tree == NULL)
 		return (-1);
-	lh = height_helper(tree->left);
-	rh = height_helper(tree->right);
+	lh = height_helper(tree->left) + 1;
+	rh = height_helper(tree->right) + 1;
 
-	return ((lh < rh) ? (lh + 1) : (rh + 1));
+	return ((lh > rh) ? lh : rh);
 }
