@@ -41,5 +41,6 @@ int binary_tree_balance(const binary_tree_t *tree);
 int binary_tree_is_perfect(const binary_tree_t *tree);
 int height(const binary_tree_t *tree);
 bool is_perfect(const binary_tree_t *tree, int height, int level);
+binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 
 #endif /* _BINARY_TREES_H_ */
