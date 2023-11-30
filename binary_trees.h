@@ -49,5 +49,7 @@ binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 bool is_valid_bst(const binary_tree_t *tree, int rangemin, int rangemax);
 int binary_tree_is_bst(const binary_tree_t *tree);
+size_t binary_tree_size(const binary_tree_t *tree);
+size_t binary_tree_nodes(const binary_tree_t *tree);
 
 #endif /* _BINARY_TREES_H_ */
