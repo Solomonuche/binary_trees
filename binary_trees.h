@@ -53,8 +53,11 @@ bool is_valid_bst(const binary_tree_t *tree, int rangemin, int rangemax);
 int binary_tree_is_bst(const binary_tree_t *tree);
 size_t binary_tree_size(const binary_tree_t *tree);
 size_t binary_tree_nodes(const binary_tree_t *tree);
+int binary_tree_is_full(const binary_tree_t *tree);
+int isFullTree_helper(const binary_tree_t *tree);
 bst_t *bst_insert(bst_t **tree, int value);
 bst_t *array_to_bst(int *array, size_t size);
 bst_t *bst_search(const bst_t *tree, int value);
+
 
 #endif /* _BINARY_TREES_H_ */
