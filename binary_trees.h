@@ -44,5 +44,6 @@ bool is_perfect(const binary_tree_t *tree, int height, int level);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 void traverse(const binary_tree_t *tree, int level, void (*func)(int));
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
+binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 
 #endif /* _BINARY_TREES_H_ */
