@@ -27,7 +27,7 @@ int isFullTree_helper(const binary_tree_t *tree)
 	int left, right;
 
 	if (tree == NULL)
-		return (0);
+		return (1);
 
 	left = isFullTree_helper(tree->left);
 	right = isFullTree_helper(tree->right);
