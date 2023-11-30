@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <limits.h>
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -46,5 +47,7 @@ void traverse(const binary_tree_t *tree, int level, void (*func)(int));
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
+bool is_valid_bst(const binary_tree_t *tree, int rangemin, int rangemax);
+int binary_tree_is_bst(const binary_tree_t *tree);
 
 #endif /* _BINARY_TREES_H_ */
