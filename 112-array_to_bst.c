@@ -11,7 +11,8 @@ bst_t *array_to_bst(int *array, size_t size)
 	size_t i;
 	bst_t *root;
 
-	if (array == NULL)
+	root = NULL;
+	if (array == NULL || size == 0)
 		return (NULL);
 
 	for (i = 0; i < size; i++)
