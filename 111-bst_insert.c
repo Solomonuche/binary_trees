@@ -14,7 +14,7 @@ bst_t *bst_insert(bst_t **tree, int value)
 	{
 		new_node = binary_tree_node(NULL, value);
 		*tree = new_node;
-		return (new);
+		return (new_node);
 	}
 	return (bst_insert_recursion(*tree, value));
 }
@@ -49,5 +49,5 @@ bst_t *bst_insert_recursion(bst_t *tree, int value)
 		}
 		return (bst_insert_recursion(tree->right, value));
 	}
-	return (NULL)
+	return (NULL);
 }
