@@ -8,44 +8,46 @@
  */
 bst_t *bst_insert(bst_t **tree, int value)
 {
-	bst_t *new_node, *current, *parent;
+	bst_t *new_node;
 
-	new_node = binary_tree_node(NULL, value);
 	if (tree == NULL || *tree == NULL)
 	{
+		new_node = binary_tree_node(NULL, value);
 		*tree = new_node;
+		return (new);
 	}
-	else
+	return (bst_insert_recursion(*tree, value));
+}
+/**
+ * bst_insert_recursion - traverses a tree to find node to insert
+ * @tree: pointer to root node
+ * @value: value to insert
+ *
+ * Return: pointer to created node or NULL
+ */
+bst_t *bst_insert_recursion(bst_t *tree, int value)
+{
+	bst_t *new;
+
+	if (tree->n > value)
 	{
-		current = *tree;
-		while (1)
+		if (tree->left == NULL)
 		{
-			parent = current;
-			if (value < parent->n)
-			{
-				current = current->left;
-				if (current == NULL)
-				{
-					parent->left = new_node;
-					new_node->parent = parent;
-					return (new_node);
-				}
-			}
-			else if (value > parent->n)
-			{
-				current = current->right;
-				if (current == NULL)
-				{
-					parent->right = new_node;
-					new_node->parent = parent;
-					return (new_node);
-				}
-			}
-			else
-			{
-				return (NULL);
-			}
+			new = binary_tree_node(tree, value);
+			tree->left = new;
+			return (new);
 		}
+		return (bst_insert_recursion(tree->left, value));
 	}
-	return (*tree);
+	if (tree->n < value)
+	{
+		if (tree->right == NULL)
+		{
+			new = binary_tree_node(tree, value);
+			tree->right = new;
+			return (new);
+		}
+		return (bst_insert_recursion(tree->right, value));
+	}
+	return (NULL)
 }
